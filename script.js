@@ -1,6 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
+   MOBILE MENU
+===================================================== */
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinksContainer = document.getElementById("nav-links");
+
+if (menuToggle && navLinksContainer) {
+
+    menuToggle.addEventListener("click", () => {
+
+        menuToggle.classList.toggle("active");
+        navLinksContainer.classList.toggle("active");
+
+    });
+
+
+    /* Close menu when link is clicked */
+
+    navLinksContainer.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            menuToggle.classList.remove("active");
+            navLinksContainer.classList.remove("active");
+
+        });
+
+    });
+
+}
+
+    /* =====================================================
        NAVIGATION
     ===================================================== */
 
